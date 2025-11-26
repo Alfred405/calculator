@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculator</title>
+</head>
+<body>
+    
+<div class="calculator">
+    <input type="text" id="viewvalue" value="" placeholder="0">
+
+    <div class="grid">
+
+    <input onclick="insert('7')" type="button" value="7">
+    <input onclick="insert('8')" type="button" value="8">
+    <input onclick="insert('9')" type="button" value="9">
+    <input onclick="insert('/')" type="button" value="/"    class="operator">
+
+
+    <input onclick="insert('4')" type="button" value="4">
+    <input onclick="insert('5')" type="button" value="5">
+    <input onclick="insert('6')" type="button" value="6">
+    <input onclick="insert('*')" type="button" value="*"    class="operator">
+
+    
+    <input onclick="insert('1')" type="button" value="1">
+    <input onclick="insert('2')" type="button" value="2">
+    <input onclick="insert('3')" type="button" value="3">
+    <input onclick="insert('-')" type="button" value="-"    class="operator">
+    
+
+    <input onclick="insert('0')" type="button" value="0"    class="zero">
+    <input onclick="insert('+')" type="button" value="+"    class="operator">
+    <input type="button" value="=" onclick="calculate()"    class="equal">
+    <input onclick="clearView()" type="button" value="C"    class="function">
+    </div>
+</div>
+    
+
+</body>
+
+    <script>
+
+        var view = document.getElementById('viewvalue');
+
+        function insert(num){
+            view.value += num;
+        }
+
+        function calculate(){
+            try{
+                view.value = eval(view.value);
+            }catch{
+                view.value = "Error";
+            }
+        }
+        
+
+            function clearView(){
+                view.value ="";
+            }
+        
+    </script>
+
+</html>
