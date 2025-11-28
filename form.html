@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Form</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    
+<div class="container">
+    <h2>Order Now</h2>
+
+    <input type="number" id="price" placeholder="Quantity"><br>
+    <input type="text" id="ordertype" placeholder="Order Type (regular/large)"><br>
+
+    <button onclick="ordernow()">Order Now</button>
+</div>
+
+<script>
+function ordernow() {
+    let ordertype = document.getElementById("ordertype").value;
+    let quantity = Number(document.getElementById("price").value);
+
+    let price = 0;
+
+    if (ordertype === "regular") {
+        price = 100;
+    } 
+    else if (ordertype === "large") {
+        price = 150;
+    } 
+    else {
+        alert("Invalid order type!");
+        return;
+    }
+
+    let total = price * quantity;
+
+    alert(
+        "Order Type: " + ordertype +
+        "\nQuantity: " + quantity +
+        "\nTotal Amount: " + total
+    );
+}
+</script>
+
+</body>
+</html>
